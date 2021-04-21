@@ -1,0 +1,9 @@
+ID,name,department,location,quantity
+1234567,Drill,Power Tools,A1,30
+2345678,Circular Saw,Power Tools,A2,20
+3456789,Hammer,Hand Tools,B1,20
+4567890,Hand Saw,Hand Tools,B2,20
+5678901,Screws,Fixings,C1,500
+6789012,Wall Plugs,Fixings,C2,500
+7890123,Screwdriver,Hand Tools,B3,20
+8901234,Wooden Plank,Materials,D1,50

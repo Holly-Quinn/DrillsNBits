@@ -24,9 +24,8 @@ titleLabel = Label(root, text="Drills N Bits Stock Tracker")
 titleLabel.config(font=("Arial", 30))
 titleLabel.grid(row=0, column=1, columnspan=4)
 
+
 # Function containing the "new product window" and any widgets/functions found in it
-
-
 def open_new_product_win():
 
     # sets up new product window
@@ -122,9 +121,8 @@ def open_new_product_win():
 
     new_button = Button(new_product_win, text="Add New Product", padx=20, pady=10, bg="blue", fg="white", command=run_append).grid(row=7, columnspan=3)
 
+
 # Displays New Product Button
-
-
 newProductButton = Button(root, text="New Product", command=open_new_product_win)
 newProductButton.config(height=5, width=15, bg="blue", fg="white")
 newProductButton.grid(row=0, column=5, padx=20)
@@ -133,7 +131,6 @@ newProductButton.grid(row=0, column=5, padx=20)
 searchBoxLabel = Label(root, text="Product ID: ")
 searchBoxLabel.config(font=("Arial", 15), width=13)
 searchBoxLabel.grid(row=1, column=2, padx=20, pady=50, sticky=E)
-
 
 searchBox = Entry(root)
 searchBox.grid(row=1, column=3, padx=20, pady=50, sticky=W)
@@ -156,7 +153,6 @@ searchByDropdown.current(0)
 searchByDropdown.bind("<<ComboboxSelected>>", combo_click)
 searchByDropdown.grid(row=1, column=1, sticky=W)
 
-
 # Sets up a results frame
 results_frame = Frame(root)
 
@@ -178,14 +174,14 @@ def search(value, type_p):
         search_type = type_p
         search_value = value
 
-        # searches through the CSV file for the search value, if it finds it, returns a line, otherwise remains None
+        # searches through the CSV file for the search value, if it finds it, returns the line, otherwise remains None
         def search_algorithm(type_s):
             for line in csv_reader:
                 if value == line[type_s]:
                     return line
 
         # runs the search using the selected search type
-        # (search type is found using a helper function that feeds into this one)
+        # search type is found using a helper function get_type() (found below @ approx line 280)
         search_result = search_algorithm(search_type)
 
         # if/elif/else statement - checks if the search could be found, if it can, displays the results and allows for
